@@ -1,2 +1,4 @@
 source: styles.css.scss
+javascript-before:
+  - /javascripts/handlebars-v1.3.0.js
 

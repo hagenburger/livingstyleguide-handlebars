@@ -70,3 +70,25 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+
+LivingStyleGuide::Example.add_filter :handlebars do |template_id|
+  begin
+    # Set up the syntax highlighter:
+    @syntax = :html
+
+    pre_processor do |json|
+      # use the contents of the file as the source of the example:
+      handlebars = File.read(File.join(%W(source templates _#{template_id}.hbs)))
+      @source = handlebars.clone
+
+      # escape JavaScript:
+      handlebars.gsub! /\n/, '\\n'
+      handlebars.gsub! /'/, '"'
+      %Q(<script>document.write(Handlebars.compile('#{handlebars}')(#{json}));</script>)
+    end
+
+  end
+end
+
+
