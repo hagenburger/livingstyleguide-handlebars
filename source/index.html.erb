@@ -8,3 +8,11 @@ title: Welcome to Middleman
     <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
   </p><!-- .doc -->
 </div><!-- .welcome -->
+
+<% Dir.glob('source/templates/*') do |file| %>
+  <% id = file.gsub(/.+\/_(.+?)\..+$/, '\\1') %>
+  <script id="<%= id %>" type="text/x-handlebars-template">
+    <%= File.read(file) %>
+  </script>
+<% end %>
+
