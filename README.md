@@ -18,4 +18,4 @@ Open <http://localhost:4567/css/styleguide.html> in your browser.
 
 Please have a look at [the commits](https://github.com/hagenburger/livingstyleguide-handlebars/commits/master).
 
-Follow me on [Twitter](http//twitter.com/hagenburger) if you have questions.
+Follow me on [Twitter](http://twitter.com/hagenburger) if you have questions.
